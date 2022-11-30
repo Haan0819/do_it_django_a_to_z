@@ -56,6 +56,11 @@
                         <!-- Post content-->
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{{ post.content }}</p>
+                            {% if post.file_upload %}
+                            <a href="{{ post.file_upload.url }}" role="button" class="btn btn-secondary" download="">Download:
+                            <i class="fa-regular fa-file-lines"></i>{{ post.get_file_name }}
+                            </a>
+                            {% endif %}
 
                         </section>
                     </article>
