@@ -100,6 +100,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
                     tag.save()
                 self.object.tags.add(tag)
 
+
         return response
 
 
