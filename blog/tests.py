@@ -74,7 +74,7 @@ class TestView(TestCase) :
         self.assertEqual(blog_btn.attrs['href'], '/blog/')
 
         about_me_btn = navbar.find('a', text='About Me')
-        self.assertEqual(about_me_btn.attrs['href'], '/about_me/')
+        self.assertEqual(about_me_btn.attrs['href'], '/about_me.css/')
 
     def test_tag_page(self):
         response = self.client.get(self.tag_hello.get_absolute_url())
