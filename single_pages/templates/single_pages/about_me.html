@@ -6,6 +6,7 @@
     <title>About HS</title>
     <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+
 </head>
 <body>
 
@@ -47,30 +48,38 @@
              </div>
          </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card" data-toggle="modal" data-target="#pycon2017">
                     <img class="card-img-top" src="{% static 'single_pages/images/cat1.jpg' %}">
                     <div class="card-body">
-                        <h5 class="card-title">고양이를 좋아합니다.</h5>
+                        <h5 class="card-title">아날로그 시계</h5>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card" data-toggle="modal" data-target="#inflearn_django2">
                     <img class="card-img-top" src="{% static 'single_pages/images/rabbit1.jpg' %}">
                     <div class="card-body">
-                        <h5 class="card-title">토끼를 키워봤습니다.</h5>
+                        <h5 class="card-title">로또 추첨</h5>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card" data-toggle="modal" data-target="#automation_python">
                     <img class="card-img-top" src="{% static 'single_pages/images/dog.jpg' %}">
                     <div class="card-body">
-                        <h5 class="card-title">강아지도 좋아합니다.</h5>
+                        <h5 class="card-title">To Do List</h5>
 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card" data-toggle="modal" data-target="#pycondog">
+                    <img class="card-img-top" height="170px" src="{% static 'single_pages/images/c.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">강아지 랜덤 사진</h5>
                     </div>
                 </div>
             </div>
@@ -78,23 +87,38 @@
     </div>
 </section>
 
-<div class="fixed-bottom">
-    {% include 'blog/footer.html' %}
-</div>
+
+{% include 'blog/footer.html' %}
+
 
 <!-- Modal -->
 <div class="modal fade" id="pycon2017" tabindex="-1" role="dialog" aria-labelledby="pycon2017ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modla-title" id="pycon2017ModalLabel">고양이를 좋아합니다.</h5>
+                <h5 class="modla-title" id="pycon2017ModalLabel">시계</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <img class="card-img-top-mo" width="760px;" height="auto;" src="{% static 'single_pages/images/cat3.jpg' %}">
-                <h5>모든 단점을 커버하는 귀여움을 가진 생명체죠.</h5>
+  <div class="clocka">
+                <div class="clockb">
+    <div id="circle1" class="circle1"></div>
+    <div class="circle2"></div>
+    <div id="circle3" class="circle3"></div>
+    <div id="hour-hand" class="hour-hand">
+    </div>
+    <div id="minute-hand" class="minute-hand">
+    </div>
+    <div id="second-hand" class="second-hand"></div>
+    <div class="center"></div>
+  </div>
+      </div>
+                <div class="date1">
+                            <div id="today" class="today"></div>
+        <div id="time" class="time"></div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -106,14 +130,19 @@
     <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modla-title" id="inflearn_django2ModalLabel">토끼를 키워봤습니다.</h5>
+                <h5 class="modla-title" id="inflearn_django2ModalLabel">로또 추첨</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <img class="card-img-top-mo" width="760px;" height="auto;" src="{% static 'single_pages/images/da1.jpg' %}">
-                <h5>살짝 맛만 보는걸루~</h5>
+                    <div class="containera">
+                    <div class="lotto">
+                        <h3>로또 번호 추첨</h3>
+                        <div class="numbers"></div>
+                        <button class="draw" id="draw">추첨</button>
+                    </div>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -125,14 +154,52 @@
     <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modla-title" id="automation_pythonModalLabel">강아지도 좋아합니다.</h5>
+                <h5 class="modla-title" id="automation_pythonModalLabel">메모</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <img class="card-img-top-mo" width="760px;" height="auto;" src="{% static 'single_pages/images/da2.jpg' %}">
-                <h5>귀여운 다빈이 사진은 나만 보는걸로 ㅎㅎ</h5>
+                    <div class="containerb">
+                    <div class="back"></div>
+                    <div class="app">
+                        <h1 class="h1">TO DO LIST</h1>
+                        <ul class="todo-list" id="todo-list"></ul>
+                        <form id="todo-form">
+                            <input class="memo" name="todo" type="text" placeholder="   내용을 입력하세요..." autocomplete="off">
+                            <input class="btn" type="submit" value="추가">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="pycondog" tabindex="-1" role="dialog" aria-labelledby="pycondog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modla-title" id="pycondogpic">시계</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                      <div class="containerc">
+                        <div class="app1" id="app1">
+                          <div id="photo" class="photo"></div>
+                          <button id="prev" class="prev nb" >PREV</button>
+                          <button id="next" class="next">NEXT</button>
+                        </div>
+                      </div>
+
+                      <div id="beginning" class="no-photo beginning">
+                        <div class="app2"></div>
+                        <button id="call-btn" class="call-btn">CALL</button>
+                      </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -145,6 +212,210 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script>
 
+
+
+
+    const todayDiv = document.getElementById("today")
+    const timeDiv = document.getElementById("time")
+    const date = new Date()
+    const hourhand = document.getElementById('hour-hand');
+    const minutehand = document.getElementById('minute-hand');
+    const secondhand = document.getElementById('second-hand');
+
+    function getTime(){
+        let now = new Date()
+        let year = now.getFullYear()
+        let month = now.getMonth()+1
+        let date = now.getDate()
+        let hour = now.getHours()
+        let minute = now.getMinutes()
+        let second = now.getSeconds()
+
+        month = month < 10 ? `0${month}` : month;
+        date = date < 10 ? `0${date}` : date;
+        hour = hour < 10 ? `0${hour}` : hour;
+        minute = minute < 10 ? `0${minute}` : minute;
+        second = second < 10 ? `0${second}` : second;
+
+        todayDiv.textContent = `${year}년 ${month}월 ${date}일`
+        timeDiv.textContent = `${hour} : ${minute} : ${second}`
+    }
+
+
+    getTime()
+    setInterval(getTime,1000)
+
+// 시침, 분침, 초침 현재 위치 각도 계산
+const secDeg = (360 * (date.getSeconds() / 60)) + (6 * (date.getMilliseconds() / 1000));
+const minDeg = (360 * (date.getMinutes() / 60)) + (6 * (secDeg / 360));
+const hourDeg = (360 * (date.getHours() / 12)) + (30 * (minDeg / 360));
+
+// 시침, 분침, 초침 rotate 적용 함수
+function rotateAnimation(hand, duration, deg) {
+  hand.animate([
+    { transform: `rotate(${deg}deg)` },
+    { transform: `rotate(${deg + 360}deg)` }
+  ], {
+    duration: duration,
+    iterations: Infinity
+  });
+}
+
+      rotateAnimation(hourhand, 43200000, hourDeg);
+      rotateAnimation(minutehand, 3600000, minDeg);
+      rotateAnimation(secondhand, 60000, secDeg);
+
+// 요소 선택 및 상수 선언
+const numbersDiv = document.querySelector('.numbers')
+const drawButton = document.querySelector('#draw')
+const lottoNumbers = []
+const colors = ['orange', 'skyblue', 'tomato', 'mediumseagreen', 'pink']
+
+// paintNumber 함수
+function paintNumber(number){
+  const eachNumDiv = document.createElement('div')
+  eachNumDiv.classList.add('eachnum')
+  let colorIndex = Math.floor(number / 10)
+  eachNumDiv.style.backgroundColor = colors[colorIndex]
+  eachNumDiv.textContent = number
+  numbersDiv.appendChild(eachNumDiv)
+}
+
+// 추첨 버튼 클릭 이벤트 핸들링
+drawButton.addEventListener('click', function(){
+    lottoNumbers.splice(0, 6)
+    numbersDiv.innerHTML = ""
+    while(lottoNumbers.length < 6){
+        let ran = Math.floor(Math.random() * 45) + 1
+        if(lottoNumbers.indexOf(ran) === -1){
+            lottoNumbers.push(ran)
+            paintNumber(ran)
+          }
+  }
+})
+
+const form = document.querySelector("form")
+const ul = document.querySelector("#todo-list")
+let myTodo = []
+
+function handledelClick(clickedId){
+    myTodo = myTodo.filter((aTodo) => {
+        if(aTodo.todoId != clickedId){
+            return true
+        }else{
+            return false
+        }
+    })
+    paintTodo()
+}
+
+function paintTodo(){
+    ul.innerHTML = ""
+    myTodo.forEach((aTodo) => {
+        let li = document.createElement("li")
+        li.classList.add(aTodo.todoDone == true ? "done" :"yet")
+        li.textContent = aTodo.todoText
+
+        li.addEventListener("click",function(){
+            handledelClick(aTodo.todoId)
+          })
+
+        let hr = document.createElement("hr")
+        ul.appendChild(li)
+        ul.appendChild(hr)
+
+    })
+
+}
+
+form.addEventListener("submit", function(e){
+    e.preventDefault()
+    let addTodo = {
+        todoText : e.target.todo.value,
+        todoDone : false,
+        todoId : new Date().getTime()  // 현재 시점을 초 단위로 환산한 결과
+    }
+
+    myTodo.push(addTodo)
+    paintTodo()
+    e.target.todo.value = ""
+})
+
+const beginning = document.getElementById("beginning")
+const callBtn = document.getElementById("call-btn")
+const prevBtn = document.getElementById("prev")
+const nextBtn = document.getElementById("next")
+const photoDiv = document.getElementById("photo")
+const app = document.getElementById("app1")
+
+// 사용 데이터 선언
+const photos = []
+const numOfPhoto = 8 // 50까지만 가능!
+let photoIndex = 0
+const request = new XMLHttpRequest()
+const api = `https://dog.ceo/api/breeds/image/random/${numOfPhoto}`
+let isPushed = false
+console.log("load")
+
+// 응답이 로드되었을 때의 이벤트 핸들링
+request.addEventListener("load", function(){
+  const responseJson = JSON.parse(request.responseText)
+  responseJson.message.forEach(function(element){
+    photos.push(element)
+  })
+
+  photoDiv.style.backgroundImage = `url(${photos[photoIndex]})`
+})
+
+// callPhotos 함수 - 요청 초기화
+function callPhotos(){
+  request.open("GET", api)
+  request.send()
+}
+  let rt = document.createElement("button")
+  rt.textContent = "Return"
+  rt.classList.add("return")
+
+// CALL 버튼 클릭 이벤트 핸들링
+callBtn.addEventListener("click", function(){
+  if(isPushed){
+    return; // 이미 버튼이 눌려진 상태에서 또 누른 거라면, 이 함수는 강제종료!
+  }
+  isPushed = true;
+
+
+  callPhotos()
+  setTimeout(function(){
+    beginning.classList.remove("beginning")
+  }, 1500)
+})
+
+// prev와 next 버튼 클릭 이벤트 핸들링
+prevBtn.addEventListener("click", function(){
+
+  if(photoIndex == 0){
+    photoIndex = numOfPhoto - 1
+    photoDiv.style.backgroundImage = `url(${photos[photoIndex]})`
+    return;
+  }
+
+  photoIndex -= 1
+  photoDiv.style.backgroundImage = `url(${photos[photoIndex]})`
+})
+
+nextBtn.addEventListener("click", function(){
+
+  if(photoIndex == numOfPhoto -1){
+    photoIndex = 0
+    photoDiv.style.backgroundImage = `url(${photos[photoIndex]})`
+    return;
+  }
+
+  photoIndex += 1
+  photoDiv.style.backgroundImage = `url(${photos[photoIndex]})`
+})
+    </script>
 </body>
 </html>
